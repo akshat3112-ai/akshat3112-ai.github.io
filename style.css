@@ -1,0 +1,77 @@
+/* Cutting Chai site: the stall's colours (turquoise wall, red/cream awning, mustard sign). */
+:root {
+  --wall: #1b7f78;
+  --paper: #fffaf1;
+  --ink: #2b1a14;
+  --muted: #6b5a52;
+  --red: #d64533;
+  --red-deep: #8f2519;
+  --cream: #fff1dc;
+  --sign: #f4b93a;
+  --link: #8f2519;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1d1714;
+    --ink: #f3e9df;
+    --muted: #b8a89d;
+    --link: #f4b93a;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--wall);
+  color: var(--ink);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.awning {
+  height: 44px;
+  background: repeating-linear-gradient(90deg, var(--red) 0 32px, var(--cream) 32px 64px);
+  border-bottom: 6px solid rgba(0, 0, 0, 0.15);
+}
+.page {
+  max-width: 720px;
+  margin: 24px auto;
+  padding: 28px 22px 36px;
+  background: var(--paper);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 760px) {
+  .page { margin: 16px; padding: 22px 18px 30px; }
+}
+h1 { font-size: 1.9rem; line-height: 1.2; margin: 0.2em 0 0.1em; color: var(--red-deep); }
+h2 { font-size: 1.2rem; margin: 1.8em 0 0.4em; color: var(--red-deep); }
+@media (prefers-color-scheme: dark) { h1, h2 { color: var(--sign); } }
+p, li { overflow-wrap: anywhere; }
+ul { padding-left: 1.3em; }
+li { margin: 0.3em 0; }
+a { color: var(--link); }
+.meta { color: var(--muted); margin-top: 0; }
+.summary { background: rgba(244, 185, 58, 0.18); border-left: 4px solid var(--sign); padding: 10px 14px; border-radius: 6px; }
+.back { margin: 0; font-size: 0.95rem; }
+.foot { text-align: center; color: var(--cream); font-size: 0.9rem; padding: 0 16px 28px; }
+
+/* Home page: the shop sign */
+.home { text-align: center; }
+.sign {
+  display: inline-block;
+  background: var(--sign);
+  border: 5px solid var(--red-deep);
+  border-radius: 10px;
+  padding: 14px 28px 16px;
+  margin: 4px 0 18px;
+  transform: rotate(-1.2deg);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+.sign .chai { margin: 0; color: var(--red-deep); font-weight: 800; font-size: 1.3rem; }
+.sign h1 { margin: 0; color: var(--red); font-size: 2.4rem; text-shadow: 2px 2px 0 var(--red-deep); }
+.sign .tag { margin: 4px 0 0; color: #4a1410; font-weight: 600; }
+.home > p { text-align: left; }
+.links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+.links a {
+  display: inline-block; padding: 10px 18px; border-radius: 999px;
+  background: var(--red); color: #fff6e6; text-decoration: none; font-weight: 700;
+  border-bottom: 4px solid var(--red-deep);
+}
