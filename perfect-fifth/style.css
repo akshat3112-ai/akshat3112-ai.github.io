@@ -1,0 +1,68 @@
+/* Perfect Fifth: the app's own look, "ink on manuscript paper" (same tokens as src/theme.ts):
+   warm paper, a writing-surface card, fountain-pen ink and one indigo accent. */
+:root {
+  --paper: #F6F2E8;
+  --card: #FFFEFA;
+  --ink: #1E2029;
+  --ink-soft: #6C6860;
+  --line: #E6DFCE;
+  --brand: #2E2D7D;
+  --brand-tint: #E9E8F5;
+  --note: #F1E7CC;
+  --note-ink: #7C5A1E;
+  --radius: 14px;
+  --serif: "Playfair Display", "Didot", "Bodoni 72", Georgia, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 32px max(16px, env(safe-area-inset-right, 0px)) 48px max(16px, env(safe-area-inset-left, 0px));
+}
+.wrap { max-width: 680px; margin: 0 auto; }
+
+.brand { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.brand img { width: 56px; height: 56px; border-radius: 13px; border: 1px solid var(--line); display: block; }
+.brand .name { font-family: var(--serif); font-weight: 700; font-size: 22px; color: var(--brand); line-height: 1.1; }
+.brand .tagline { font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 22px 8px;
+  margin-bottom: 14px;
+}
+h1 { font-family: var(--serif); font-size: 30px; line-height: 1.2; margin: 0 0 6px; color: var(--ink); text-wrap: balance; }
+.meta { font-size: 13px; color: var(--ink-soft); margin: 0 0 16px; }
+h2 {
+  font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink-soft); margin: 26px 0 8px;
+}
+p, li { color: #34363f; }
+p { margin: 0 0 14px; }
+ul { margin: 0 0 14px; padding-left: 20px; }
+li { margin: 4px 0; }
+strong { color: var(--ink); }
+a { color: var(--brand); text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 3px; }
+.summary {
+  background: var(--note);
+  color: var(--note-ink);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 4px 0 18px;
+}
+.summary strong { color: var(--note-ink); }
+.foot { max-width: 680px; margin: 8px auto 0; font-size: 12.5px; color: var(--ink-soft); text-align: center; }
+@media (max-width: 480px) {
+  body { padding-top: 20px; }
+  h1 { font-size: 25px; }
+  .card { padding: 18px 16px 4px; }
+}
